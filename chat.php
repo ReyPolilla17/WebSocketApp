@@ -10,7 +10,7 @@
     $link = connect();
 
     if(userExists($user, $pass)) {
-        echo("Te conozco");
+        $templates->loadTemplateFile("chat.html");
     } else {    
         echo("¿Quién eres?");
     }
