@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:site_name" content="El Archivo del Diodo" />
+    <meta property="og:title" content="El Archivo del Diodo: Inicia Sesión" />
+    <meta property="og:description" content="Inicia sesión en El Archivo del Diodo." />
+    <meta property="og:image" itemprop="image" content="https://antares.dci.uia.mx/ict23jzt/p_final_bd/media/logos/logo-fondo-2.jpg" />
+    <meta name="theme-color" content="#03120E" />
+
+    <title>Inicio de Sesión</title>
+
+    <link rel="shortcut icon" href="./media/logos/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/forms.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/vertical-screen.css">
+
+    <script src="https://code.jquery.com/jquery-4.1.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+
+    <script src="./scripts/validations.js" defer></script>
+</head>
+<body>
+    <div class="body-wrapper" style="background-image: url(./media/images/chat.webp);">
+        <div class="form-parent-wrapper">
+            <div class="form-wrapper">
+                <form action="./dashboard.php" method="post" onsubmit="return validateLogin()">
+                    <input type="hidden" name="origin" value="1">
+                    <div class="form">
+                        <h1>Inicia Sesión</h1>
+        
+                        <div class="form-group">
+                            <a href="#username-m" name="username" tabindex="-1">
+                                <div id="username-m" class="mandatory" style="opacity: 0;">Debes introducir tu usuario</div>
+                            </a>
+                            <input type="text" name="username" id="username-input" placeholder="Usuario" onkeydown="hideWarning('username-m')">
+                            <label for="username-input">Usuario</label>
+                        </div>
+                
+                        <div class="form-group">
+                            <a href="#password-m" name="password" tabindex="-1">
+                                <div id="password-m" class="mandatory" style="opacity: 0;">Debes introducir tu contraseña</div>
+                            </a>
+                            <input type="password" name="password" id="password-input" placeholder="Contraseña" onkeydown="hideWarning('password-m')">
+                            <label for="password-input">Contraseña</label>
+                        </div>
+                        
+                        <div class="submit-button">
+                            <button type="submit">Ingresar</button>
+                        </div>
+                        
+                        <div class="redirect">
+                            <div class="separator"></div>
+                            ¿No tienes una cuenta? <a href="./register.html">¡Crea una!</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

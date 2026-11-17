@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #302727;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #4A3D3D;
+}

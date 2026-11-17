@@ -1,0 +1,14 @@
+.body-wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    height: 100vh;
+}
+
+.body-wrapper > .form-parent-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(0.3);
+    height: 100%;
+}
