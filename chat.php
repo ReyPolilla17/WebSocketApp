@@ -2,9 +2,18 @@
     require_once "HTML/Template/ITX.php";
     include "./php/common.php";
 
+    $templates = new HTML_Template_ITX('./components');
+
     $user = sanitize($_POST['username']);
     $pass = sanitize($_POST['password']);
 
-    echo($user);
-    echo($pass);
+    $link = connect();
+
+    if(userExists($user, $pass)) {
+        echo("Te conozco");
+    } else {    
+        echo("¿Quién eres?");
+    }
+
+    @mysqli_close($link);
 ?>

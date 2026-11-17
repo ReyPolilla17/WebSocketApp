@@ -14,4 +14,20 @@
 
         return $link;
     }
+
+    function userExists($user, $pass) {
+        $link = connect();
+
+        $query = "SELECT * FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
+        $result = mysqli_query($link, $query);
+
+        @mysqli_close($link);
+
+        if($line = mysqli_fetch_assoc($result)) {
+            mysqli_free_result($result);    
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 ?>
