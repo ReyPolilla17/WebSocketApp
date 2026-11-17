@@ -12,6 +12,7 @@
     if(userExists($user, $pass)) {
         $templates->loadTemplateFile("chat.html");
         $templates->setVariable("USER", $user);
+        $templates->parseCurrentBlock();
     } else {    
         echo("¿Quién eres?");
     }
