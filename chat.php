@@ -21,5 +21,7 @@
         echo("¿Quién eres?");
     }
 
+    $templates->show();
+
     @mysqli_close($link);
 ?>
