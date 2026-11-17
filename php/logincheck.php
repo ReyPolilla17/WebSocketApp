@@ -9,7 +9,7 @@
     $link = connect();
     
     // busca usuarios con la información recibida
-    $query = "SELECT * FROM b_cuentas WHERE usuario = '$user' AND contrasena = '$pass' LIMIT 1";
+    $query = "SELECT * FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
     $result = mysqli_query($link, $query);
 
     // si el usuario existe, regresa un 1 (la forma que encontré de hacer esto "seguro")

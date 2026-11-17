@@ -10,7 +10,7 @@
     $link = connect();
     
     // verifica si el usuario existe
-    $query = "SELECT * FROM b_cuentas WHERE usuario = '$user' LIMIT 1";
+    $query = "SELECT * FROM users WHERE user_name = '$user' LIMIT 1";
     $result = mysqli_query($link, $query);
 
     // si el usuario existe, no permite crear la cuenta y regresa error
