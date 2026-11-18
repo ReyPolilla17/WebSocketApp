@@ -17,13 +17,7 @@
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            $a = $templates->loadTemplateFile("conversation.html");
-
-            if($a) {
-                echo("Eip");
-            } else {
-                echo("Nop");
-            }
+            $templates->loadTemplateFile("conversation.html");
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['conversation_image']);
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
@@ -41,6 +35,8 @@
                 $m_user_id = $line_messages['user_id'];
                 $m_user_name = $line_messages['user_name'];
                 $m_user_image = $line_messages['user_image'];
+
+                echo("$m_user_id, $user_id");
 
                 if($m_user_id == $user_id) {
                     $templates->setCurrentBlock("YOUR_MESSAGES");
