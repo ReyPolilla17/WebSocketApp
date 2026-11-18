@@ -24,7 +24,7 @@
         @mysqli_close($link);
 
         if($line = mysqli_fetch_assoc($result)) {
-            mysqli_free_result($result);    
+            mysqli_free_result($result);
             return 1;
         } else {
             return 0;
