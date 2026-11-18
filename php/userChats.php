@@ -21,7 +21,7 @@
             $i = 0;
 
             while($line_chats = mysqli_fetch_assoc($result_chats)) {
-                $c_id = $line_user_chats['conversation_id'];
+                $c_id = $line_chats['conversation_id'];
                 
                 $data[] = "$c_id";
                 
