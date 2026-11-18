@@ -46,7 +46,7 @@
     $str = "$str ]";
 
     echo json_encode($elements);
-    echo($str);
+    // echo($str);
 
     @mysqli_close($link);
 ?>
