@@ -28,7 +28,7 @@
 
             $i = 0;
 
-            $templates->addBlockFile("CHATS", "CHATS_COLLECTION", "./chats-list.html");
+            $templates->addBlockFile("CHATS_LIST", "CHATS_COLLECTION", "./chats-list.html");
             
             while($line_user_chats = mysqli_fetch_assoc($result_user_chats)) {
                 echo("--A--");
