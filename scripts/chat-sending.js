@@ -1,7 +1,9 @@
 function sendMessage() {
-    const message = document.getElementById("send-message").value.trim();
+    const input = document.getElementById("send-message");
+    const message = input.value.trim();
 
     console.log(message);
+    input.value = '';
 
     return false;
 }
