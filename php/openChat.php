@@ -38,19 +38,19 @@
                 $m_user_name = $line_messages['user_name'];
                 $m_user_image = $line_messages['user_image'];
 
-                if($m_user_id == $user_id) {
-                    $templates->setCurrentBlock("YOUR_MESSAGES");
-                } else {
-                    $templates->setCurrentBlock("OTHER_MESSAGES");
-                }
+                // if($m_user_id == $user_id) {
+                //     $templates->setCurrentBlock("YOUR_MESSAGES");
+                // } else {
+                //     $templates->setCurrentBlock("OTHER_MESSAGES");
+                // }
 
-                $templates->setVariable("ID", $message_id);
-                $templates->setVariable("TIMESTAMP", $message_timestamp);
-                $templates->setVariable("CONTENT", $message_content);
-                $templates->setVariable("AUTHOR_NAME", $m_user_name);
-                $templates->setVariable("AUTHOR_IMAGE", $m_user_image);
+                // $templates->setVariable("ID", $message_id);
+                // $templates->setVariable("TIMESTAMP", $message_timestamp);
+                // $templates->setVariable("CONTENT", $message_content);
+                // $templates->setVariable("AUTHOR_NAME", $m_user_name);
+                // $templates->setVariable("AUTHOR_IMAGE", $m_user_image);
 
-                $templates->parseCurrentBlock();
+                // $templates->parseCurrentBlock();
 
                 $i++;
             }
@@ -60,10 +60,11 @@
             }
 
             mysqli_free_result($result_conversation);
-        } else {
-            $templates->loadTemplateFile("placeholder.html");
-            $templates->parseCurrentBlock();
-        }
+        } 
+        // else {
+        //     $templates->loadTemplateFile("placeholder.html");
+        //     $templates->parseCurrentBlock();
+        // }
 
         $templates->show();
 
