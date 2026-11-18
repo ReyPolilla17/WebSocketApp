@@ -18,7 +18,7 @@
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            $query_send = "CALL sendMessage($message, $chat_id, $user_id)";
+            $query_send = "CALL sendMessage('$message', $chat_id, $user_id)";
             $result_send = mysqli_query($link, $query_send);
 
             if($line_send = mysqli_fetch_assoc($result_send)) {
