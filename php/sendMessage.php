@@ -22,6 +22,9 @@
             $result_send = mysqli_query($link, $query_send);
 
             if($line_send = mysqli_fetch_assoc($result_send)) {
+                $line_send['type'] = 'message';
+                var_dump($line_send);
+
                 $context = new ZMQContext();
                 $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'my pusher');
                 $socket->connect("tcp://localhost:5555");

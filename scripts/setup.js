@@ -31,6 +31,7 @@ function initUser(username, password) {
 }
 
 function successChats(result, status, xhr) {
+    console.log(result)
     try {
         const res = JSON.parse(result);
 
