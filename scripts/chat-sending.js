@@ -27,6 +27,6 @@ function onNewMessage(data) {
     console.log(recvData);
 
     if(oppenedChat !== null && oppenedChat.value === data.conversation_id) {
-        console.log(data);
+        console.log("AAAA");
     }
 }
