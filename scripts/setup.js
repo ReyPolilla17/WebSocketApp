@@ -31,13 +31,13 @@ function successChats(result, status, xhr) {
 
         conn.subscribe(`u_${res.user}`, function(topic, data) {
             // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
-            console.log('New article published to category "' + topic + '" : ' + data.message);
+            console.log('New article published to category "' + topic + '" : ' + data);
         });
 
         res.chats.forEach(el => {
            conn.subscribe(`c_${el}`, function(topic, data) {
                 // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
-                console.log('New article published to category "' + topic + '" : ' + data.message);
+                console.log('New article published to category "' + topic + '" : ' + data);
             });
         })
     } catch(e) {
