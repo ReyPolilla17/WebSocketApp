@@ -24,18 +24,18 @@
                 $c_id = $line_chats['conversation_id'];
                 
                 $data[] = "$c_id";
-                var_dump($data);
                 
                 $i++;
             }
 
             if($i) {
+                var_dump($data);
                 mysqli_free_result($result_chats);
             }
 
             mysqli_free_result($result_user_id);
         }
 
-        echo json_encode($data);
+        echo array_values($data)
     }
 ?>
