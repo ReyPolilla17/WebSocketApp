@@ -30,7 +30,7 @@
 
             if($i) {
                 var_dump($data);
-                mysqli_free_result($result_user_chats);
+                mysqli_free_result($result_chats);
             }
 
             mysqli_free_result($result_user_id);
