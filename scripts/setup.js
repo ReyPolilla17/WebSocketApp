@@ -30,7 +30,7 @@ function initUser(username, password) {
 }
 
 function successChats(result, status, xhr) {
-    console.log(JSON.parse(result));
+    console.log(result);
 }
 
 function eFnction(xhr, status, error) {
