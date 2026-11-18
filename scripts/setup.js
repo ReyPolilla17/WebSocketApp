@@ -1,7 +1,7 @@
 let conn;
 
 function initUser(username, password) {
-    window.localStorage.userinfo = JSON.stringify({user: username, password: password});
+    window.localStorage.userinfo = {user: username, password: password};
 
     conn = new ab.Session('wss://192.168.188.135/ws',
         function() {

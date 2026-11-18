@@ -9,7 +9,9 @@
 
     $link = connect();
 
-    if(userExists($user, $pass)) {
+    $user_id = userExists($user, $pass);
+
+    if($user_id) {
         $templates->loadTemplateFile("chat.html");
 
         $templates->setVariable("USER", $user);
@@ -17,41 +19,32 @@
         
         $templates->addBlockFile("CHAT", "CHAT", "./placeholder.html");
         $templates->touchBlock("CHAT");
-
-        $query_user_id = "SELECT user_id FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
-        $result_user_id = mysqli_query($link, $query_user_id);
         
-        if($line_user_id = mysqli_fetch_assoc($result_user_id)) {
-            $user_id = $line_user_id['user_id'];
+        $query_user_chats = "CALL getUserChats($user_id)";
+        $result_user_chats = mysqli_query($link, $query_user_chats);
+
+        $i = 0;
+
+        $templates->addBlockFile("CHATS_LIST", "CHATS_COLLECTION", "./chats-list.html");
+        
+        while($line_user_chats = mysqli_fetch_assoc($result_user_chats)) {
+            $c_id = $line_user_chats['chat_id'];
+            $c_name = $line_user_chats['chat_name'];
+            $c_image = $line_user_chats['chat_image'];
             
-            $query_user_chats = "CALL getUserChats($user_id)";
-            $result_user_chats = mysqli_query($link, $query_user_chats);
+            $templates->setCurrentBlock("CHATS");
 
-            $i = 0;
+            $templates->setVariable("IMAGE", $c_image);
+            $templates->setVariable("NAME", $c_name);
+            $templates->setVariable("ID", $c_id);
 
-            $templates->addBlockFile("CHATS_LIST", "CHATS_COLLECTION", "./chats-list.html");
+            $templates->parseCurrentBlock();
             
-            while($line_user_chats = mysqli_fetch_assoc($result_user_chats)) {
-                $c_id = $line_user_chats['chat_id'];
-                $c_name = $line_user_chats['chat_name'];
-                $c_image = $line_user_chats['chat_image'];
-                
-                $templates->setCurrentBlock("CHATS");
+            $i++;
+        }
 
-                $templates->setVariable("IMAGE", $c_image);
-                $templates->setVariable("NAME", $c_name);
-                $templates->setVariable("ID", $c_id);
-
-                $templates->parseCurrentBlock();
-                
-                $i++;
-            }
-
-            if($i) {
-                mysqli_free_result($result_user_chats);
-            }
-
-            mysqli_free_result($result_user_id);
+        if($i) {
+            mysqli_free_result($result_user_chats);
         }
     } else {    
         echo("¿Quién eres?");
