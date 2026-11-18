@@ -21,7 +21,11 @@
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
             $a = $templates->loadTemplateFile('conversation.html');
 
-            echo("$a");
+            if($a) {
+                echo("Eip");
+            } else {
+                echo("Nop");
+            }
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['conversation_image']);
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
