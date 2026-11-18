@@ -23,7 +23,7 @@ function sendMessage(chatId) {
 function onNewMessage(data) {
     const oppenedChat = document.getElementById("oppened-chat");
 
-    console.log("AAAA");
+    console.log(JSON.parse(data));
 
     if(oppenedChat !== null && oppenedChat.value === data.conversation_id) {
         console.log(data);
