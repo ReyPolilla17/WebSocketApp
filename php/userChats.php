@@ -36,6 +36,6 @@
             mysqli_free_result($result_user_id);
         }
 
-        echo array_values($data)
+        echo array_values($data);
     }
 ?>
