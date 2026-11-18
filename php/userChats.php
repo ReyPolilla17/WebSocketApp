@@ -2,13 +2,13 @@
     include "./common.php";
 
     $user = sanitize($_POST['username']);
-    $passwd = sanitize($_POST['password']);
+    $pass = sanitize($_POST['password']);
 
     $link = connect();
 
     $data = array();
 
-    if(userExists($user, $passwd)) {
+    if(userExists($user, $pass)) {
         $query_user_id = "SELECT user_id FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
         $result_user_id = mysqli_query($link, $query_user_id);
         
