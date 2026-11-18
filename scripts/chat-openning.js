@@ -1,8 +1,6 @@
 function openChat(chatId) {
     const userInfo = JSON.parse(window.localStorage.userinfo);
 
-    console.log(`username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}`);
-
     $.ajax({
         url: './php/openChat.php',
         dataType: 'html',
@@ -15,6 +13,6 @@ function openChat(chatId) {
 }
 
 function displayChat(result, status, xhr) {
-    $('#chat-wrapper').html(result); 
+    $("#chat-wrapper").html(result); 
     // console.log(result);
 }
