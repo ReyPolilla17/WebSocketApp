@@ -42,7 +42,7 @@
 
     $str = "$str ]";
 
-    echo json_encode($str);
+    echo($str);
 
     @mysqli_close($link);
 ?>
