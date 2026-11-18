@@ -1,4 +1,4 @@
-// let conn;
+let conn;
 
 function initUser(username, password) {
     window.localStorage.userinfo = JSON.stringify({user: username, password: password});
