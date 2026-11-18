@@ -6,7 +6,7 @@
 
     $link = connect();
 
-    $data = array();
+    echo('[');
 
     if(userExists($user, $pass)) {
         $query_user_id = "SELECT user_id FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
@@ -22,20 +22,25 @@
 
             while($line_chats = mysqli_fetch_assoc($result_chats)) {
                 $c_id = $line_chats['conversation_id'];
+
+                if($i) {
+                    echo(", ");
+                }
                 
-                $data[] = "$c_id";
+                echo("'$c_id'");
                 
                 $i++;
             }
 
             if($i) {
-                var_dump($data);
                 mysqli_free_result($result_chats);
             }
 
             mysqli_free_result($result_user_id);
         }
-
-        echo array_values($data);
     }
+
+    echo("]");
+
+    @mysqli_close($link);
 ?>
