@@ -13,6 +13,5 @@ function openChat(chatId) {
 }
 
 function displayChat(result, status, xhr) {
-    console.log(result);
     $("#chat-wrapper").html(result); 
 }
