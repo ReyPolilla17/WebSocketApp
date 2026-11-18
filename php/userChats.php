@@ -6,7 +6,7 @@
 
     $link = connect();
 
-    $data = array()
+    $data = array();
 
     if(userExists($user, $pass)) {
         $query_user_id = "SELECT user_id FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
