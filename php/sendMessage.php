@@ -30,8 +30,6 @@
                 $socket->connect("tcp://localhost:5555");
 
                 $socket->send(json_encode($line_send));
-
-                echo("hola");
             }
 
             mysqli_free_result($result_conversation);

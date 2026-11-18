@@ -13,7 +13,7 @@ function sendMessage(chatId) {
             method: 'POST',
             async: true,
             data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}&message=${message}`,
-            success: successSend,
+            success: null,
             error: eFnction
         });
     }
@@ -21,6 +21,10 @@ function sendMessage(chatId) {
     return false;
 }
 
-function successSend(result, status, xhr) {
-    console.log(result);
+function onNewMessage(data) {
+    const oppenedChat = document.getElementById("oppened-chat");
+
+    if(oppenedChat !== null && oppenedChat.value === data.conversation_id) {
+        console.log(data);
+    }
 }
