@@ -1,0 +1,40 @@
+window.localStorage;
+
+let conn;
+
+function initUser(username, password) {
+    window.localStorage.userinfo = JSON.stringify({user: username, password: password});
+
+    conn = new ab.Session('ws://192.168.188.135:8080',
+        function() {
+            console.log('Websocker connection ready');
+        },
+        function() {
+            console.warn('WebSocket connection closed');
+        },
+        {'skipSubprotocolCheck': true}
+    );
+
+    $.ajax({
+        url: './php/userChats.php',
+        dataype: 'json',
+        type: 'POST',
+        async: true,
+        data: `username=${username}&password=${password}`,
+        success: successChats,
+        error: eFnction
+    })
+
+    conn.subscribe(`${username}`, function(topic, data) {
+        // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
+        console.log('New article published to category "' + topic + '" : ' + data.title);
+    });
+}
+
+function successChats(result, status, xhr) {
+    console.log(result);
+}
+
+function eFnction(xhr, status, erorr) {
+
+}

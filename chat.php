@@ -11,6 +11,9 @@
 
     if(userExists($user, $pass)) {
         $templates->loadTemplateFile("chat.html");
+
+        $templates->setVariable("USER", $user);
+        $templates->setVariable("PASS", $pass);
         
         $templates->addBlockFile("CHAT", "CHAT", "./placeholder.html");
         $templates->touchBlock("CHAT");
