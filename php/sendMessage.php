@@ -22,6 +22,9 @@
             $result_send = mysqli_query($link, $query_send);
 
             if($line_send = mysqli_fetch_assoc($result_send)) {
+                $c_id = $line_send['conversation_id'];
+                $line_send['category'] = "c_$c_id";
+
                 $context = new ZMQContext();
                 $socket = $context->getSocket(ZMQ::SOCKET_PUSH, 'my pusher');
                 $socket->connect("tcp://localhost:5555");
