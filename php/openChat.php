@@ -16,14 +16,22 @@
         $query_conversation = "SELECT * FROM conversations WHERE conversation_id = $chat_id";
         $result_conversation = mysqli_query($link, $query_conversation);
 
-        if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            $a = $templates->loadTemplateFile("conversation.html");
+        $a = $templates->loadTemplateFile("conversation.html");
 
             if($a) {
                 echo("Eip");
             } else {
                 echo("Nop");
             }
+
+        if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
+            // $a = $templates->loadTemplateFile("conversation.html");
+
+            // if($a) {
+            //     echo("Eip");
+            // } else {
+            //     echo("Nop");
+            // }
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['conversation_image']);
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
@@ -65,10 +73,10 @@
 
             mysqli_free_result($result_conversation);
         } 
-        // else {
-        //     $templates->loadTemplateFile("placeholder.html");
-        //     $templates->parseCurrentBlock();
-        // }
+        else {
+            $templates->loadTemplateFile("placeholder.html");
+            $templates->parseCurrentBlock();
+        }
 
         $templates->show();
 
