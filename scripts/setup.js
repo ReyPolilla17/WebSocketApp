@@ -33,6 +33,6 @@ function successChats(result, status, xhr) {
     console.log(result);
 }
 
-function eFnction(xhr, status, erorr) {
-
+function eFnction(xhr, status, error) {
+    console.log(xhr, status, error)
 }
