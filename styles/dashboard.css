@@ -1,0 +1,19 @@
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.content-wrapper > .chat-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper > .chat-bar > .chat-topbar {
+    display: flex;
+    padding: 2em;
+}
+
+.chat-collection > .chat-card {
+    padding: 1em 2em;
+}
