@@ -27,7 +27,7 @@
     
             $i = 0;
 
-            $templates->addBlockFile("MESSAGES", "MESSAGES", "./messahes.html");
+            $templates->addBlockFile("MESSAGE_LIST", "MESSAGE_COLLECTION", "./messahes.html");
 
             while($line_messages = mysqli_fetch_assoc($result_messages)) {
                 $message_id = $line_messages['message_id'];
