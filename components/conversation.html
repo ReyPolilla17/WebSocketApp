@@ -25,6 +25,8 @@
 </div>
 
 <div class="send-bar">
-    <input type="text" name="send-message" id="send-message" placeholder="Mensaje...">
-    <button>Enviar</button>
+    <form onsubmit="sendMessage()">
+        <input type="text" name="send-message" id="send-message" placeholder="Mensaje...">
+        <button type="submit">Enviar</button>
+    </form>
 </div>
