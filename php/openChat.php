@@ -19,7 +19,9 @@
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            $templates->loadTemplateFile('conversation.html');
+            $a = $templates->loadTemplateFile('conversation.html');
+
+            echo($a);
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['conversation_image']);
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
@@ -38,19 +40,19 @@
                 $m_user_name = $line_messages['user_name'];
                 $m_user_image = $line_messages['user_image'];
 
-                // if($m_user_id == $user_id) {
-                //     $templates->setCurrentBlock("YOUR_MESSAGES");
-                // } else {
-                //     $templates->setCurrentBlock("OTHER_MESSAGES");
-                // }
+                if($m_user_id == $user_id) {
+                    $templates->setCurrentBlock("YOUR_MESSAGES");
+                } else {
+                    $templates->setCurrentBlock("OTHER_MESSAGES");
+                }
 
-                // $templates->setVariable("ID", $message_id);
-                // $templates->setVariable("TIMESTAMP", $message_timestamp);
-                // $templates->setVariable("CONTENT", $message_content);
-                // $templates->setVariable("AUTHOR_NAME", $m_user_name);
-                // $templates->setVariable("AUTHOR_IMAGE", $m_user_image);
+                $templates->setVariable("ID", $message_id);
+                $templates->setVariable("TIMESTAMP", $message_timestamp);
+                $templates->setVariable("CONTENT", $message_content);
+                $templates->setVariable("AUTHOR_NAME", $m_user_name);
+                $templates->setVariable("AUTHOR_IMAGE", $m_user_image);
 
-                // $templates->parseCurrentBlock();
+                $templates->parseCurrentBlock();
 
                 $i++;
             }
