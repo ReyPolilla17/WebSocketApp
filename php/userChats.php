@@ -1,5 +1,5 @@
 <?php
-    include "./php/common.php";
+    include "./common.php";
 
     $user = sanitize($_POST['username']);
     $passwd = sanitize($_POST['password']);
