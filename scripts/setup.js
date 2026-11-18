@@ -13,11 +13,6 @@ function initUser(username, password) {
                 data: `username=${username}&password=${password}`,
                 success: successChats,
                 error: eFnction
-            })
-            
-            conn.subscribe(`${username}`, function(topic, data) {
-                // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
-                console.log('New article published to category "' + topic + '" : ' + data.title);
             });
 
             console.log('Websocket connection ready');
@@ -31,12 +26,16 @@ function initUser(username, password) {
 }
 
 function successChats(result, status, xhr) {
-    console.log(result)
     try {
         const res = JSON.parse(result);
 
-        res.forEach(el => {
-           conn.subscribe(`${el}`, function(topic, data) {
+        conn.subscribe(`u_${res.user}`, function(topic, data) {
+            // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
+            console.log('New article published to category "' + topic + '" : ' + data.message);
+        });
+
+        res.chats.forEach(el => {
+           conn.subscribe(`c_${el}`, function(topic, data) {
                 // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
                 console.log('New article published to category "' + topic + '" : ' + data.message);
             });

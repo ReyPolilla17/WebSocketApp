@@ -6,8 +6,6 @@
 
     $link = connect();
 
-    $str = "[";
-
     $elements = array();
 
     $user_id = userExists($user, $pass);
@@ -17,21 +15,12 @@
         $result_chats = mysqli_query($link, $query_chats);
         
         $elements['user'] = $user_id;
-        
         $chats = array();
 
         $i = 0;
 
         while($line_chats = mysqli_fetch_assoc($result_chats)) {
-            $c_id = $line_chats['conversation_id'];
-
-            array_push($chats, $c_id);
-
-            if($i) {
-                $str = "$str,";
-            }
-            
-            $str = "$str $c_id";
+            array_push($chats, $line_chats['conversation_id']);
             
             $i++;
         }
@@ -43,10 +32,7 @@
         }
     }
 
-    $str = "$str ]";
-
     echo json_encode($elements);
-    // echo($str);
 
     @mysqli_close($link);
 ?>
