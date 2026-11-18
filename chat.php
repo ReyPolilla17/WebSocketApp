@@ -3,7 +3,6 @@
     include "./php/common.php";
 
     $templates = new HTML_Template_ITX('./components');
-    $removeEmptyBlocks = false;
     
     $user = sanitize($_POST['username']);
     $pass = sanitize($_POST['password']);
