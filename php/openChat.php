@@ -13,7 +13,7 @@
     if($user_id) {
         $link = connect();
 
-        $query_conversation = "SELECT * FROM conversations WHERE conversation_id = $chat_id";
+        $query_conversation = "SELECT conversation_image, conversation_name FROM user_conversation uc LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE c.conversation_id = $chat_id AND uc.user_id = $user_id LIMIT 1";
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
@@ -21,6 +21,7 @@
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['conversation_image']);
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
+            $templates->setVariable("CHAT_ID", $chat_id);
     
             $query_messages = "SELECT message_id, message_timestamp, message_content, user_id, user_name, user_image FROM v_chat_messages WHERE conversation_id = $chat_id";
             $result_messages = mysqli_query($link, $query_messages);
