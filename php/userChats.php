@@ -6,7 +6,7 @@
 
     $link = connect();
 
-    echo('[');
+    $str = "[";
 
     if(userExists($user, $pass)) {
         $query_user_id = "SELECT user_id FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
@@ -24,10 +24,10 @@
                 $c_id = $line_chats['conversation_id'];
 
                 if($i) {
-                    echo(", ");
+                    $str = "$str,";
                 }
                 
-                echo("'$c_id'");
+                $str = "$str $c_id";
                 
                 $i++;
             }
@@ -40,7 +40,9 @@
         }
     }
 
-    echo("]");
+    $str = "$str ]";
+
+    echo json_encode($str);
 
     @mysqli_close($link);
 ?>
