@@ -22,7 +22,21 @@
     <script src="./scripts/autobahn.js"></script>
 
     <script src="./scripts/setup.js"></script>
-    <script>initUser('{USER}', '{PASS}')</script>
+    <script>
+        var conn = new ab.Session('ws://192.168.188.135:8080',
+            function() {
+                conn.subscribe('1', function(topic, data) {
+                    // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
+                    console.log('New article published to category "' + topic + '" : ' + data.message);
+                });
+            },
+            function() {
+                console.warn('WebSocket connection closed');
+            },
+            {'skipSubprotocolCheck': true}
+        );
+    </script>
+    <!-- <script>initUser('{USER}', '{PASS}')</script> -->
 </head>
 <body>
     <div class="content-wrapper">
