@@ -1,5 +1,3 @@
-window.localStorage;
-
 let conn;
 
 function initUser(username, password) {
