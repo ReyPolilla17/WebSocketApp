@@ -16,13 +16,13 @@
         $query_conversation = "SELECT * FROM conversations WHERE conversation_id = $chat_id";
         $result_conversation = mysqli_query($link, $query_conversation);
 
-        $a = $templates->loadTemplateFile("conversation.html");
+        $a = $templates->loadTemplateFile("chat.html");
 
-            if($a) {
-                echo("Eip");
-            } else {
-                echo("Nop");
-            }
+        if($a) {
+            echo("Eip");
+        } else {
+            echo("Nop");
+        }
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
             // $a = $templates->loadTemplateFile("conversation.html");
