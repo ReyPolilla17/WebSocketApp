@@ -35,7 +35,7 @@ function successChats(result, status, xhr) {
 
         console.log(res);
     } catch(e) {
-
+        console.error(e, result);
     }
 }
 
