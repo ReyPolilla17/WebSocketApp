@@ -24,12 +24,12 @@
                 $c_id = $line_chats['conversation_id'];
                 
                 $data[] = "$c_id";
+                var_dump($data);
                 
                 $i++;
             }
 
             if($i) {
-                var_dump($data);
                 mysqli_free_result($result_chats);
             }
 
