@@ -13,7 +13,6 @@ function sendMessage(chatId) {
             method: 'POST',
             async: true,
             data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}&message=${message}`,
-            success: null,
             error: eFnction
         });
     }
@@ -23,6 +22,8 @@ function sendMessage(chatId) {
 
 function onNewMessage(data) {
     const oppenedChat = document.getElementById("oppened-chat");
+
+    console.log("AAAA");
 
     if(oppenedChat !== null && oppenedChat.value === data.conversation_id) {
         console.log(data);
