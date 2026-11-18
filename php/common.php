@@ -25,6 +25,7 @@
 
         if($line = mysqli_fetch_assoc($result)) {
             mysqli_free_result($result);
+            
             return $line['user_id'];
         } else {
             return 0;

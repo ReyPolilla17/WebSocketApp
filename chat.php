@@ -3,15 +3,15 @@
     include "./php/common.php";
 
     $templates = new HTML_Template_ITX('./components');
-
+    
     $user = sanitize($_POST['username']);
     $pass = sanitize($_POST['password']);
-
-    $link = connect();
-
+    
     $user_id = userExists($user, $pass);
-
+    
     if($user_id) {
+        $link = connect();
+
         $templates->loadTemplateFile("chat.html");
 
         $templates->setVariable("USER", $user);
@@ -46,11 +46,11 @@
         if($i) {
             mysqli_free_result($result_user_chats);
         }
+
+        $templates->show();
+
+        @mysqli_close($link);
     } else {    
         echo("¿Quién eres?");
     }
-
-    $templates->show();
-
-    @mysqli_close($link);
 ?>
