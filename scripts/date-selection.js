@@ -1,12 +1,12 @@
 function updateDaysAviable() {
-    var day = document.getElementById("day"); // El día seleccionado
-    var month = document.getElementById("month"); // El mes seleccionao
-    var year = document.getElementById("year"); // El año introducido
+    const day = document.getElementById("day"); // El día seleccionado
+    const month = document.getElementById("month"); // El mes seleccionao
+    const year = document.getElementById("year"); // El año introducido
 
-    var curYear = new Date().getFullYear(); // El año actual
-    var maxDay = new Date(year.value, month.value, 0).getDate(); // Obtiene el último día del mes seleccionado
+    const curYear = new Date().getFullYear(); // El año actual
+    let maxDay = new Date(year.value, month.value, 0).getDate(); // Obtiene el último día del mes seleccionado
 
-    var dayIndex = day.selectedIndex; // guarda el día seleccionado
+    const dayIndex = day.selectedIndex; // guarda el día seleccionado
 
     const daysAv = [`<option value="0" style="display: none;">Día</option>`]; // arreglo con los días disponibles
 

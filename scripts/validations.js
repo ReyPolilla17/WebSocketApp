@@ -1,26 +1,26 @@
 function hideWarning(warningId) {
-    var warning = document.getElementById(warningId); // el elemento a ocultar
+    const warning = document.getElementById(warningId); // el elemento a ocultar
 
     warning.style.opacity = 0; // oculta el elemento
 }
 
 function resetWarning(warningId) {
-    var warning = document.getElementById(warningId); // el elemento a reestablecer
+    const warning = document.getElementById(warningId); // el elemento a reestablecer
 
     warning.innerText = "*"; // establece el valor por defecto
 }
 
 function validateLogin() {
-    var username = document.getElementById("username-input").value; // usuario
-    var password = document.getElementById("password-input").value; // contraseña
+    const username = document.getElementById("username-input").value; // usuario
+    const password = document.getElementById("password-input").value; // contraseña
 
-    var usr_m = document.getElementById("username-m"); // nota de campo obligatorio
-    var pswd_m = document.getElementById("password-m"); // nota de campo obligatorio
+    const usr_m = document.getElementById("username-m"); // nota de campo obligatorio
+    const pswd_m = document.getElementById("password-m"); // nota de campo obligatorio
 
-    var redirect = null; // a que parte de la forma refirigir
-    var select = null; // que parte de la forma seleccionar
+    let redirect = null; // a que parte de la forma refirigir
+    let select = null; // que parte de la forma seleccionar
 
-    var v = true; // la forma es válida
+    let v = true; // la forma es válida
 
     if(username === '') { // si no se introduce el usuario
         usr_m.innerText = "Debes introducir tu usuario";
@@ -78,30 +78,30 @@ function validateLogin() {
 }
 
 function validateRegister() {
-    var username = document.getElementById("username-input").value; // nombre propuesto
+    const username = document.getElementById("username-input").value; // nombre propuesto
 
-    var password = document.getElementById("password-input").value; // contraseña
-    var password_confirm = document.getElementById("password-confirm").value; // confirmación de contraseña
+    const password = document.getElementById("password-input").value; // contraseña
+    const password_confirm = document.getElementById("password-confirm").value; // confirmación de contraseña
 
-    var day = parseInt(document.getElementById("day").value, 10); // día seleccionado como entero
-    var month = parseInt(document.getElementById("month").value, 10); // mes seleccionado como entero
-    var year = parseInt(document.getElementById("year").value, 10); // año seleccionado como entero
+    const day = parseInt(document.getElementById("day").value, 10); // día seleccionado como entero
+    const month = parseInt(document.getElementById("month").value, 10); // mes seleccionado como entero
+    const year = parseInt(document.getElementById("year").value, 10); // año seleccionado como entero
 
-    var usr_m = document.getElementById("username-m"); // nota de campo obligatorio
-    var pswd_m = document.getElementById("password-m"); // nota de campo obligatorio
-    var pswd_c_m = document.getElementById("password-confirm-m"); // nota de campo obligatorio
-    var date_m = document.getElementById("birth-date-m"); // nota de campo obligatorio
+    const usr_m = document.getElementById("username-m"); // nota de campo obligatorio
+    const pswd_m = document.getElementById("password-m"); // nota de campo obligatorio
+    const pswd_c_m = document.getElementById("password-confirm-m"); // nota de campo obligatorio
+    const date_m = document.getElementById("birth-date-m"); // nota de campo obligatorio
 
-    var birthDate = new Date(year, month - 1, day); // crea la fecha seleccionada
-    var curDate = new Date(); // obtiene la fecha actual
-    var minDate = new Date(curDate.getFullYear() - 15, curDate.getMonth(), curDate.getDate()); // edad minima
-    var maxDate = new Date(curDate.getFullYear() - 200, curDate.getMonth(), curDate.getDate()); // edad máxima
+    const birthDate = new Date(year, month - 1, day); // crea la fecha seleccionada
+    const curDate = new Date(); // obtiene la fecha actual
+    const minDate = new Date(curDate.getFullYear() - 15, curDate.getMonth(), curDate.getDate()); // edad minima
+    const maxDate = new Date(curDate.getFullYear() - 200, curDate.getMonth(), curDate.getDate()); // edad máxima
 
     // validaciones
-    var redirect = null;
-    var select = null;
+    let redirect = null;
+    let select = null;
 
-    var v = true;
+    let v = true;
 
     // validaciones de nombre de usuario
     if(username === '') { // campo llenado
@@ -212,15 +212,11 @@ function validateRegister() {
 }
 
 function hasProhibitedChars(username) {
-    var allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_".split(""); // los caracteres que puede tener un nombre de usuario
+    const allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_".split(""); // los caracteres que puede tener un nombre de usuario
 
     allowedChars.forEach(char => { // elimina todos los caracteres del nombre propuesto que se encuentren en la lista de caracteres validos
         username = username.replaceAll(char, "");
     });
 
     return username.length; // regresa un conteo de caracteres
-}
-
-function eFnction(xhr, status, error) {
-    console.log(xhr, status, error);
 }
