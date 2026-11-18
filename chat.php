@@ -31,12 +31,13 @@
             $templates->addBlockFile("CHATS", "CHATS_COLLECTION", "./chats-list.html");
             
             while($line_user_chats = mysqli_fetch_assoc($result_user_chats)) {
+                echo("--A--");
                 $c_id = $line_user_chats['chat_id'];
                 $c_name = $line_user_chats['chat_name'];
                 $c_image = $line_user_chats['chat_image'];
                 
                 $templates->setCurrentBlock("CHATS");
-                
+
                 $templates->setVariable("IMAGE", $c_image);
                 $templates->setVariable("NAME", $c_name);
                 $templates->setVariable("ID", $c_id);
