@@ -4,8 +4,6 @@
 
     $templates = new HTML_Template_ITX('./components');
 
-    $templates->removeEmptyBlocks = false;
-
     $user = sanitize($_POST['username']);
     $pass = sanitize($_POST['password']);
     $chat_id = sanitize($_POST['chatId']);
