@@ -3,6 +3,6 @@
         'a' => 1
     );
 
-    // header('Content-Type: application/json; charset=utf-8');
+    header('Content-Type: application/json; charset=utf-8');
     echo($data);
 ?>
