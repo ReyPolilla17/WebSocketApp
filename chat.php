@@ -48,6 +48,8 @@
                 $i++;
             }
 
+            $templates->touchBlock("CHATS_COLLECTION");
+
             if($i) {
                 mysqli_free_result($result_user_chats);
             }
