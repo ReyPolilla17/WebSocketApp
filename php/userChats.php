@@ -27,7 +27,7 @@
                     $str = "$str,";
                 }
                 
-                $str = "$str '$c_id'";
+                $str = "$str $c_id";
                 
                 $i++;
             }
