@@ -3,18 +3,20 @@ function sendMessage(chatId) {
     
     const input = document.getElementById("send-message");
     const message = input.value.trim();
-
+    
     input.value = '';
 
-    $.ajax({
-        url: './php/sendMessage.php',
-        datatype: 'html',
-        method: 'POST',
-        async: true,
-        data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}&message=${message}`,
-        success: successSend,
-        error: eFnction
-    });
+    if(message.length) {
+        $.ajax({
+            url: './php/sendMessage.php',
+            datatype: 'html',
+            method: 'POST',
+            async: true,
+            data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}&message=${message}`,
+            success: successSend,
+            error: eFnction
+        });
+    }
 
     return false;
 }
