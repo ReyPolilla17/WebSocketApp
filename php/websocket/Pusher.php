@@ -1,5 +1,5 @@
 <?php
-namespace MyApp;
+namespace MyChatApp;
 use Ratchet\ConnectionInterface;
 use Ratchet\Wamp\WampServerInterface;
 
