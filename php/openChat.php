@@ -3,7 +3,6 @@
     include './common.php';
 
     $templates = new HTML_Template_ITX('./components');
-    $removeEmptyBlocks = false;
 
     $user = sanitize($_POST['username']);
     $pass = sanitize($_POST['password']);
@@ -55,6 +54,7 @@
             }
 
             if($i) {
+                echo($i);
                 mysqli_free_result($result_messages);
             }
 
