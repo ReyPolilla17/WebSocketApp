@@ -33,7 +33,9 @@ function successChats(result, status, xhr) {
     try {
         const res = JSON.parse(result);
 
-        console.log(res);
+        res.forEach(el => {
+            console.log(el);
+        })
     } catch(e) {
         console.error(e, result);
     }
