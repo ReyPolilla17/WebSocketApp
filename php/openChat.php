@@ -66,5 +66,7 @@
         $templates->show();
 
         @mysqli_close($link);
+    } else {
+        echo("HUH?");
     }
 ?>
