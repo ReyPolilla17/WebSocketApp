@@ -12,13 +12,7 @@
     if($user_id) {
         $link = connect();
 
-        $a = $templates->loadTemplateFile("chat.html");
-
-        if($a) {
-            echo("eip");
-        } else {
-            echo("nop");
-        }
+        $templates->loadTemplateFile("chat.html");
 
         $templates->setVariable("USER", $user);
         $templates->setVariable("PASS", $pass);

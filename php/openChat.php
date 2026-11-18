@@ -17,7 +17,7 @@
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            $a = $templates->loadTemplateFile('conversation.html');
+            $a = $templates->loadTemplateFile("conversation.html");
 
             if($a) {
                 echo("Eip");
