@@ -1,5 +1,5 @@
 function openChat(chatId) {
-    const userInfo = window.localStorage.userinfo;
+    const userInfo = JSON.parse(window.localStorage.userinfo);
 
     console.log(`username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}`);
 
