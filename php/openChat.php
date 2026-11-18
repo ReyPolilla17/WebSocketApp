@@ -21,7 +21,7 @@
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
             $a = $templates->loadTemplateFile('conversation.html');
 
-            echo($a);
+            echo("$a");
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['conversation_image']);
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
