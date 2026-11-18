@@ -13,6 +13,7 @@
         $templates->loadTemplateFile("chat.html");
         
         $templates->addBlockFile("CHAT", "CHAT", "./placeholder.html");
+        $templates->parseCurrentBlock();
 
         $query_user_id = "SELECT user_id FROM users WHERE user_name = '$user' AND user_password = '$pass' LIMIT 1";
         $result_user_id = mysqli_query($link, $query_user_id);
