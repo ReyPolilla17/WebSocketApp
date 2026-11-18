@@ -5,7 +5,7 @@ function initUser(username, password) {
 
     conn = new ab.Session('wss://192.168.188.135/ws',
         function() {
-            console.log('Websocker connection ready');
+            console.log('Websocket connection ready');
         },
         function() {
             console.warn('WebSocket connection closed');
