@@ -20,5 +20,5 @@ function sendMessage(chatId) {
 }
 
 function successSend(result, status, xhr) {
-
+    console.log(result);
 }
