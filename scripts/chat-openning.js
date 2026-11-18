@@ -1,6 +1,8 @@
 function openChat(chatId) {
     const userInfo = window.localStorage.userinfo;
 
+    console.log(`username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}`);
+
     $.ajax({
         url: './php/openChat.php',
         dataType: 'html',
