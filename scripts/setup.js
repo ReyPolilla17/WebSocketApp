@@ -34,7 +34,10 @@ function successChats(result, status, xhr) {
         const res = JSON.parse(result);
 
         res.forEach(el => {
-            console.log(el);
+           conn.subscribe(`${el}`, function(topic, data) {
+                // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
+                console.log('New article published to category "' + topic + '" : ' + data.message);
+            });
         })
     } catch(e) {
         console.error(e, result);
