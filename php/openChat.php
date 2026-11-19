@@ -13,7 +13,8 @@
     if($user_id) {
         $link = connect();
 
-        $query_conversation = "SELECT conversation_image, conversation_name FROM user_conversation uc LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE c.conversation_id = $chat_id AND uc.user_id = $user_id LIMIT 1";
+        $query_conversation = "CALL getUserChats($user_id, $chat_id)";
+
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
