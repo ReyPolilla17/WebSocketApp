@@ -17,6 +17,8 @@
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
+            mysqli_free_result($result_conversation);
+
             $templates->loadTemplateFile("conversation.html");
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['chat_image']);
@@ -59,8 +61,6 @@
             if($i) {
                 mysqli_free_result($result_messages);
             }
-
-            mysqli_free_result($result_conversation);
         } 
         else {
             $templates->loadTemplateFile("placeholder.html");
