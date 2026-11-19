@@ -21,6 +21,7 @@
         $templates->loadTemplateFile("./chats-list.html");
 
         while($line_chats = mysqli_fetch_assoc($result_chats)) {
+            echo(a);
             $c_id = $line_chats['chat_id'];
             $c_name = $line_chats['chat_name'];
             $c_image = $line_chats['chat_image'];
