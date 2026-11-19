@@ -24,6 +24,8 @@ class Pusher implements WampServerInterface {
             return;
         }
 
+        echo($entryData);
+
         $topic = $this->subscribedTopics[$entryData['category']];
 
         unset($entryData['category']);
