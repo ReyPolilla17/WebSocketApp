@@ -36,6 +36,11 @@
     gap: 1em;
     padding: 1em 2em;
     border-bottom: 3px solid #2F3061;
+    transition: 0.3s;
+}
+
+.chat-collection > .chat-card:hover {
+    background-color: #6CA6C1;
 }
 
 #messages-wrapper {
