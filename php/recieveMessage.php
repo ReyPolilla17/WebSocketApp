@@ -18,14 +18,13 @@
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            $query_message = "SELECT message_id, message_timestamp, message_content, user_id, user_name, user_image FROM v_chat_messages WHERE conversation_id = $chat_id AND message_id = $message_id";
+            $query_message = "SELECT message_timestamp, message_content, user_id, user_name, user_image FROM v_chat_messages WHERE conversation_id = $chat_id AND message_id = $message_id";
             $result_message = mysqli_query($link, $query_message);
 
             if($line_message = mysqli_fetch_assoc($result_message)) {
                 $templates->loadTemplateFile("messages.html");
                 $templates->setCurrentBlock("MESSAGES");
 
-                $message_id = $line_message['message_id'];
                 $message_timestamp = $line_message['message_timestamp'];
                 $message_content = $line_message['message_content'];
 
@@ -33,7 +32,6 @@
                 $m_user_name = $line_message['user_name'];
                 $m_user_image = $line_message['user_image'];
                 
-                $templates->setVariable("ID", $message_id);
                 $templates->setVariable("TIMESTAMP", $message_timestamp);
                 $templates->setVariable("CONTENT", $message_content);
                 $templates->setVariable("AUTHOR_NAME", $m_user_name);

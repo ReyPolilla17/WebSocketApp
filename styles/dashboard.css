@@ -1,12 +1,13 @@
 .content-wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    height: 100%;
 }
 
-.content-wrapper > .chat-wrapper {
+.content-wrapper > #chat-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content-wrapper > .chat-bar > .chat-topbar {
@@ -14,6 +15,46 @@
     padding: 2em;
 }
 
+.content-wrapper > .chat-bar {
+    background-color: #98D2EB;
+}
+
+.content-wrapper > #chat-wrapper > .chat-info-wrapper {
+    background-color: #2F3061;
+    color: white;
+    padding: 1.2em;
+}
+
 .chat-collection > .chat-card {
     padding: 1em 2em;
+}
+
+#messages-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: #fff3b7;
+}
+
+.send-bar {
+    padding: 2em;
+    background-color: #fff3b7;
+}
+
+.other-message {
+    background-color: #6CA6C1;
+    width: max-content;
+    margin: 0.6em 1.2em;
+    padding: 1em;
+    border-radius: 2em;
+}
+
+.your-message {
+    background-color: #98D2EB;
+    width: max-content;
+    margin: 0.6em 1.2em;
+    padding: 1em;
+    border-radius: 2em;
+    align-self: flex-end;
 }
