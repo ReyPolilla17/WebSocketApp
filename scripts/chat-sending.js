@@ -28,7 +28,6 @@ function onNewMessage(data) {
     console.log(recvData);
 
     if(oppenedChat !== null && oppenedChat.value === recvData.conversation_id) {
-        console.log("AAAA");
         // $.ajax({
             // {message_id: '53', message_timestamp: '2026-11-18 18:10:49', message_content: 'Grd', user_id: '2', conversation_id: '1'}
         // })

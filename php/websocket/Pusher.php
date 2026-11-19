@@ -10,7 +10,6 @@ class Pusher implements WampServerInterface {
     protected $subscribedTopics = array();
 
     public function onSubscribe(ConnectionInterface $conn, $topic) {
-        echo("$topic\n");
         $this->subscribedTopics[$topic->getId()] = $topic;
     }
 
@@ -20,14 +19,10 @@ class Pusher implements WampServerInterface {
     public function onBlogEntry($entry) {
         $entryData = json_decode($entry, true);
 
-        echo($entry);
-
         // If the lookup topic object isn't set there is no one to publish to
         if (!array_key_exists($entryData['category'], $this->subscribedTopics)) {
             return;
         }
-
-        echo($entryData);
 
         $topic = $this->subscribedTopics[$entryData['category']];
 
