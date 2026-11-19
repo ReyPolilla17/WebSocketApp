@@ -2,7 +2,7 @@
 
 <div class="chat-info-wrapper">
     {CHAT_IMAGE}
-    {CHAT_NAME}
+    <h1>{CHAT_NAME}</h1>
 </div>
 
 <div id="messages-wrapper">
@@ -11,7 +11,9 @@
 
 <div class="send-bar">
     <form onsubmit="return sendMessage({CHAT_ID})">
-        <input type="text" name="send-message" id="send-message" placeholder="Mensaje...">
-        <button type="submit">Enviar</button>
+        <div class="send-form">
+            <input type="text" name="send-message" id="send-message" placeholder="Mensaje..." autocomplete="off">
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
     </form>
 </div>
