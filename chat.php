@@ -20,7 +20,7 @@
         $templates->addBlockFile("CHAT", "CHAT", "./placeholder.html");
         $templates->touchBlock("CHAT");
         
-        $query_user_chats = "CALL getUserChats($user_id, 0)";
+        $query_user_chats = "CALL getUserChats($user_id)";
         $result_user_chats = mysqli_query($link, $query_user_chats);
 
         $i = 0;

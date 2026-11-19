@@ -13,12 +13,10 @@
     if($user_id) {
         $link = connect();
 
-        $query_conversation = "CALL getUserChats($user_id, $chat_id)";
+        $query_conversation = "SELECT IF(c.is_chat, u.user_image, c.conversation_image) chat_image, IF(c.is_chat, u.user_name, c.conversation_name) chat_name FROM user_conversation uc LEFT JOIN users u ON uc.user_id = u.user_id LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE uc.conversation_id = $chat_id AND u.user_id != $user_id LIMIT 1";
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
-            mysqli_free_result($result_conversation);
-
             $templates->loadTemplateFile("conversation.html");
 
             $templates->setVariable("CHAT_IMAGE", $line_conversation['chat_image']);
@@ -61,6 +59,8 @@
             if($i) {
                 mysqli_free_result($result_messages);
             }
+
+            mysqli_free_result($result_conversation);
         } 
         else {
             $templates->loadTemplateFile("placeholder.html");
