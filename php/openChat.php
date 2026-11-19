@@ -14,7 +14,6 @@
         $link = connect();
 
         $query_conversation = "CALL getUserChats($user_id, $chat_id)";
-
         $result_conversation = mysqli_query($link, $query_conversation);
 
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
