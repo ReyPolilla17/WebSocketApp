@@ -39,7 +39,7 @@
                 $m_user_name = $line_messages['user_name'];
                 $m_user_image = $line_messages['user_image'];
 
-                echo($message_timestamp);
+                echo("$message_timestamp\n");
 
                 if($m_user_id == $user_id) {
                     $templates->setCurrentBlock("YOUR_MESSAGES");
