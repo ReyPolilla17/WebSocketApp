@@ -31,7 +31,7 @@
             $templates->addBlockFile("MESSAGE_LIST", "MESSAGE_COLLECTION", "./messages.html");
 
             while($line_messages = mysqli_fetch_assoc($result_messages)) {
-                $templates->setCurrentBlock("YOUR_MESSAGES");
+                $templates->setCurrentBlock("MESSAGES");
 
                 $message_id = $line_messages['message_id'];
                 $message_timestamp = $line_messages['message_timestamp'];
