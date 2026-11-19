@@ -25,8 +25,6 @@ function onNewMessage(data) {
     const oppenedChat = document.getElementById("oppened-chat");
     const recvData = JSON.parse(data)
 
-    console.log(recvData);
-
     if(oppenedChat !== null && oppenedChat.value === recvData.conversation_id) {
         $.ajax({
             url: './php/recieveMessage.php',
