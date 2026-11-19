@@ -31,9 +31,9 @@
 
 #messages-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    height: 50%;
     background-color: #fff3b7;
 }
 
