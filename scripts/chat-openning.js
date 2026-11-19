@@ -1,6 +1,11 @@
 function openChat(chatId) {
     const userInfo = JSON.parse(window.localStorage.userinfo);
 
+    const searchInput = document.getElementById('chat-search');
+
+    searchInput.value = '';
+    filterChats();
+
     $.ajax({
         url: './php/openChat.php',
         dataType: 'html',

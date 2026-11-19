@@ -30,7 +30,7 @@
     padding: 1.2em;
 }
 
-.chat-collection > .chat-card {
+#chat-collection > .chat-card {
     display: flex;
     align-items: center;
     gap: 1em;
@@ -39,7 +39,7 @@
     transition: 0.3s;
 }
 
-.chat-collection > .chat-card:hover {
+#chat-collection > .chat-card:hover {
     background-color: #6CA6C1;
 }
 
