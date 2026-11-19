@@ -39,5 +39,5 @@ function onNewMessage(data) {
 }
 
 function successNewMessage(result, status, xhr) {
-    $("#messages-wrapper").append(result);
+    $("#messages-wrapper").preppend(result);
 }
