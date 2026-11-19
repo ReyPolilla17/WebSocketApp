@@ -13,7 +13,7 @@
     if($user_id) {
         $link = connect();
 
-        $query_chats = "SELECT c.conversation_id chat_id, IF(c.is_chat, u.user_image, c.conversation_image) chat_image, IF(c.is_chat, u.user_name, c.conversation_name) chat_name FROM user_conversation uc LEFT JOIN users u ON uc.user_id = u.user_id LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE uc.conversation_id IN(SELECT conversation_id FROM user_conversation WHERE user_id = c_user_id) AND u.user_id != c_user_id AND (chat_name LIKE '%$search_input%' OR chat_id LIKE '%$search_input%')";
+        $query_chats = "SELECT c.conversation_id chat_id, IF(c.is_chat, u.user_image, c.conversation_image) chat_image, IF(c.is_chat, u.user_name, c.conversation_name) chat_name FROM user_conversation uc LEFT JOIN users u ON uc.user_id = u.user_id LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE uc.conversation_id IN(SELECT conversation_id FROM user_conversation WHERE user_id = $user_id) AND u.user_id != $user_id AND (chat_name LIKE '%$search_input%' OR chat_id LIKE '%$search_input%')";
         $result_chats = mysqli_query($link, $query_chats);
 
         $i = 0;
