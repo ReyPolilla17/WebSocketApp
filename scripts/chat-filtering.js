@@ -14,5 +14,6 @@ function filterChats() {
 }
 
 function displayFilterdChats(result, status, xhr) {
+    console.log(result);
     $("#chat-collection").html(result);
 }
