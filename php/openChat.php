@@ -31,6 +31,8 @@
             $templates->addBlockFile("MESSAGE_LIST", "MESSAGE_COLLECTION", "./messages.html");
 
             while($line_messages = mysqli_fetch_assoc($result_messages)) {
+                $templates->setCurrentBlock("YOUR_MESSAGES");
+
                 $message_id = $line_messages['message_id'];
                 $message_timestamp = $line_messages['message_timestamp'];
                 $message_content = $line_messages['message_content'];
@@ -39,19 +41,17 @@
                 $m_user_name = $line_messages['user_name'];
                 $m_user_image = $line_messages['user_image'];
 
-                echo("<p>$message_timestamp</p>\n");
-
-                if($m_user_id == $user_id) {
-                    $templates->setCurrentBlock("YOUR_MESSAGES");
-                } else {
-                    $templates->setCurrentBlock("OTHER_MESSAGES");
-                }
-
                 $templates->setVariable("ID", $message_id);
                 $templates->setVariable("TIMESTAMP", $message_timestamp);
                 $templates->setVariable("CONTENT", $message_content);
-                $templates->setVariable("AUTHOR_NAME", $m_user_name);
                 $templates->setVariable("AUTHOR_IMAGE", $m_user_image);
+                
+                if($m_user_id == $user_id) {
+                    $templates->setVariable("CLASS", "your-message");
+                } else {
+                    $templates->setVariable("AUTHOR_NAME", $m_user_name);
+                    $templates->setVariable("CLASS", "other-message");
+                }
 
                 $templates->parseCurrentBlock();
 

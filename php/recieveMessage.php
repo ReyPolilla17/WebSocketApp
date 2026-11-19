@@ -23,6 +23,7 @@
 
             if($line_message = mysqli_fetch_assoc($result_message)) {
                 $templates->loadTemplateFile("messages.html");
+                $templates->setCurrentBlock("MESSAGES");
 
                 $message_id = $line_message['message_id'];
                 $message_timestamp = $line_message['message_timestamp'];
@@ -31,18 +32,19 @@
                 $m_user_id = $line_message['user_id'];
                 $m_user_name = $line_message['user_name'];
                 $m_user_image = $line_message['user_image'];
-
-                if($m_user_id == $user_id) {
-                    $templates->setCurrentBlock("YOUR_MESSAGES");
-                } else {
-                    $templates->setCurrentBlock("OTHER_MESSAGES");
-                }
-
+                
                 $templates->setVariable("ID", $message_id);
                 $templates->setVariable("TIMESTAMP", $message_timestamp);
                 $templates->setVariable("CONTENT", $message_content);
                 $templates->setVariable("AUTHOR_NAME", $m_user_name);
                 $templates->setVariable("AUTHOR_IMAGE", $m_user_image);
+                
+                if($m_user_id == $user_id) {
+                    $templates->setVariable("CLASS", "your-message");
+                } else {
+                    $templates->setVariable("AUTHOR_NAME", $m_user_name);
+                    $templates->setVariable("CLASS", "other-message");
+                }
 
                 $templates->parseCurrentBlock();
 
