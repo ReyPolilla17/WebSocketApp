@@ -36,6 +36,7 @@
     flex-direction: column-reverse;
     overflow-y: auto;
     background-color: #fff3b7;
+    padding: 0 1em;
 }
 
 .send-bar {
