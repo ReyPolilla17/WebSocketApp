@@ -13,6 +13,7 @@ function sendMessage(chatId) {
             method: 'POST',
             async: true,
             data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}&message=${message}`,
+            success: function() {console.log("A")},
             error: eFnction
         });
     }
