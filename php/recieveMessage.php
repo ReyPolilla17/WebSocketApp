@@ -9,4 +9,6 @@
     $chat_id = sanitize($_POST['chatId']);
 
     $user_id = userExists($user, $pass);
+
+    echo("<h1>Hooo</h1>");
 ?>
