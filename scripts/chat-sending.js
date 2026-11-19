@@ -4,9 +4,8 @@ function sendMessage(chatId) {
     const input = document.getElementById("send-message");
     const message = input.value.trim();
     
-    input.value = '';
-
-    if(message.length) {
+    
+    if(message.length > 0 && message.length < 2000) {
         $.ajax({
             url: './php/sendMessage.php',
             datatype: 'html',
@@ -15,6 +14,8 @@ function sendMessage(chatId) {
             data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}&message=${message}`,
             error: eFnction
         });
+        
+        input.value = '';
     }
 
     return false;

@@ -1,9 +1,11 @@
 <!-- BEGIN CHATS -->
 <div class="chat-card" onclick="openChat({ID})">
-    {IMAGE}
-    {NAME}
-    {LAST_MESSAGE}
-    {LAST_MESSAGE_TIMESTAMP}
-    {UNREAD_MESSAGES}
+    <div class="image-wrapper">{IMAGE}</div>
+    <div class="info-wrapper">
+        <strong>{NAME}</strong>
+        {LAST_MESSAGE}
+        {LAST_MESSAGE_TIMESTAMP}
+        {UNREAD_MESSAGES}
+    </div>
 </div>
 <!-- END CHATS -->
