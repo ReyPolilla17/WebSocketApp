@@ -1,6 +1,8 @@
 function filterChats() {
     const userInfo = JSON.parse(window.localStorage.userinfo);
-    const searchInput = document.getElementById('chat-search');
+    const searchInput = document.getElementById('chat-search').value;
+
+    console.log("A");
 
     $.ajax({
         url: './php/filterChats.php',
