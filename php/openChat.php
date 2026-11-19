@@ -23,7 +23,7 @@
             $templates->setVariable("CHAT_NAME", $line_conversation['conversation_name']);
             $templates->setVariable("CHAT_ID", $chat_id);
     
-            $query_messages = "SELECT message_id, message_timestamp, message_content, user_id, user_name, user_image FROM v_chat_messages WHERE conversation_id = $chat_id";
+            $query_messages = "SELECT message_id, message_timestamp, message_content, user_id, user_name, user_image FROM v_chat_messages WHERE conversation_id = $chat_id ORDER BY message_timestamp";
             $result_messages = mysqli_query($link, $query_messages);
     
             $i = 0;
