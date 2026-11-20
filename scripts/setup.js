@@ -32,6 +32,9 @@ function successChats(result, status, xhr) {
         conn.subscribe(`u_${res.user}`, function(topic, data) {
             // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
             console.log('New article published to category "' + topic + '" : ' + JSON.stringify(data));
+
+            // Temporal solution :P
+            filterChats();
         });
 
         res.chats.forEach(el => {
