@@ -21,16 +21,16 @@
         if($type == 1) {
             echo("A");
             
-            $templates->setCurrentBlock("CHAT");
+            // $templates->setCurrentBlock("CHAT");
             
             $query_users = "SELECT user_id, user_name, user_image, birth_date, creation_date FROM users WHERE user_id != $user_id";
             $block_name = "USERS_CHAT_LIST";
         } else {
             echo("B");
-            $templates->setCurrentBlock("GROUP");
+            // $templates->setCurrentBlock("GROUP");
         }
 
-        // $templates->addBlockFile("USERS_LIST", "USERS_COLLECTION", "./users-list.html");
+        $templates->addBlockFile("USERS_LIST", "USERS_COLLECTION", "./users-list.html");
 
         $result_users = mysqli_query($link, $query_users);
 
