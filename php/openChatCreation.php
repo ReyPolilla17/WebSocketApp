@@ -13,7 +13,5 @@
         $templates->loadTemplateFile("./create-chat.html");
         $templates->parseCurrentBlock();
         $templates->show();
-
-        @mysqli_close($link);
     }
 ?>
