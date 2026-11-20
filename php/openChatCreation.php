@@ -10,7 +10,7 @@
     $user_id = userExists($user, $pass);
 
     if($user_id) {
-        $templates->loadTemplateFile("./create-chat.html");
+        $templates->loadTemplateFile("./create-chat.html", true, false);
         $templates->parseCurrentBlock();
         $templates->show();
     }

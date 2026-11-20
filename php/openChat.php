@@ -63,6 +63,7 @@
             mysqli_free_result($result_conversation);
         } 
         else {
+            $templates->removeEmptyBlocks = false;
             $templates->loadTemplateFile("create-chat.html");
             $templates->parseCurrentBlock();
         }
