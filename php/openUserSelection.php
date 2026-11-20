@@ -13,17 +13,20 @@
     if($user_id) {
         $link = connect();
 
-        $templates->loadTemplateFile("user-selection.html");
+        $templates->loadTemplateFile("./user-selection.html");
 
         $query_users = "SELECT user_id, user_name, user_image, birth_date, creation_date FROM users WHERE user_id != $user_id";
         $block_name = "USERS_GROUP_LIST";
         
         if($type == 1) {
+            echo("A");
+            
             $templates->setCurrentBlock("CHAT");
             
             $query_users = "SELECT user_id, user_name, user_image, birth_date, creation_date FROM users WHERE user_id != $user_id";
             $block_name = "USERS_CHAT_LIST";
         } else {
+            echo("B");
             $templates->setCurrentBlock("GROUP");
         }
 
@@ -44,7 +47,6 @@
         }
 
         if($i) {
-            echo("A");
             mysqli_free_result($result_users);
         }
 
