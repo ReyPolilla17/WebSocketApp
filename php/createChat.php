@@ -22,7 +22,7 @@
 
             $socket->send(json_encode($line_chat));
 
-            echo("$line_chat['conversation_id']\n$user2_id\n$user_id");
+            echo("$user2_id\n$user_id");
 
             mysqli_free_result($result_chat);
         }
