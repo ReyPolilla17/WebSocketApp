@@ -30,6 +30,7 @@
             $templates->addBlockFile("SELECTION", "GROUP_SELECTION", "./user-selection-group.html");
         }
 
+        $templates->addBlockFile("USERS_LIST", "USERS_COLLECTION", "./users-list.html");
         $result_users = mysqli_query($link, $query_users);
 
         $i = 0;
