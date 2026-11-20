@@ -19,9 +19,9 @@
         if($line_conversation = mysqli_fetch_assoc($result_conversation)) {
             $templates->loadTemplateFile("conversation.html");
 
-            $templates->setVariable("CHAT_IMAGE", $line_conversation['chat_image']);
-            $templates->setVariable("CHAT_NAME", $line_conversation['chat_name']);
-            $templates->setVariable("CHAT_ID", $chat_id);
+            // $templates->setVariable("CHAT_IMAGE", $line_conversation['chat_image']);
+            // $templates->setVariable("CHAT_NAME", $line_conversation['chat_name']);
+            // $templates->setVariable("CHAT_ID", $chat_id);
     
             $query_messages = "SELECT message_timestamp, message_content, user_id, user_name, user_image FROM v_chat_messages WHERE conversation_id = $chat_id";
             $result_messages = mysqli_query($link, $query_messages);
