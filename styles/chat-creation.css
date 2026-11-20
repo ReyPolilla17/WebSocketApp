@@ -21,6 +21,17 @@
     color: #2F3061;
     padding: 2em;
     border-radius: 2em;
+    transition: 0.3s;
+}
+
+.new-chat-wrapper > .options-wrapper > .option:hover {
+    background-color: #fff3b7;
+    box-shadow: 0px 0px 32px -14px #fff3b7;
+}
+
+.new-chat-wrapper > .options-wrapper > .option:active {
+    background-color: #fff3b7;
+    box-shadow: 0px 0px 0px 0px;
 }
 
 .new-chat-wrapper > .options-wrapper > .option i {
