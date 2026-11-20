@@ -45,9 +45,9 @@ function successNewChat(result, status, xhr) {
 
     const chatId = parseInt(result);
 
-    // openChat(chatId);
+    openChat(chatId);
 
-    // conn.subscribe(`c_${chatId}`, function(topic, data) {
-    //     onNewMessage(JSON.stringify(data));
-    // });
+    conn.subscribe(`c_${chatId}`, function(topic, data) {
+        onNewMessage(JSON.stringify(data));
+    });
 }
