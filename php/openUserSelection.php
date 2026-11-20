@@ -35,7 +35,11 @@
         while($line_users = mysqli_fetch_assoc($result_users)) {
             $templates->setCurrentBlock($block_name);
 
+            $templates->setVariable("USER_ID", $line_users['user_id']);
             $templates->setVariable("USER_NAME", $line_users['user_name']);
+            $templates->setVariable("USER_IMAGE", $line_users['user_image']);
+            $templates->setVariable("USER_BIRTHDAY", $line_users['birth_date']);
+            $templates->setVariable("USER_JOINED", $line_users['creation_date']);
             
             $templates->parseCurrentBlock();
 
