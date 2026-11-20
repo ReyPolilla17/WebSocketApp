@@ -40,7 +40,7 @@
     margin-bottom: 0.5em;
 }
 
-.new-char-wrapper > button {
+.new-chat-wrapper > button {
     padding: 10px;
     border-radius: 2em;
     font-size: 1.1em;
@@ -50,10 +50,10 @@
     transition: 0.3s;
 }
 
-.new-char-wrapper > button:hover {
+.new-chat-wrapper > button:hover {
     background-color: #fff3b7;
 }
 
-.new-char-wrapper > button:active {
+.new-chat-wrapper > button:active {
     background-color: #FFE66D;
 }
