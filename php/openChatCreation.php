@@ -11,7 +11,7 @@
 
     if($user_id) {
         $templates->loadTemplateFile("./create-chat.html");
-        $templates->touchCurrentBlock();
+        $templates->parseCurrentBlock();
         $templates->show();
 
         @mysqli_close($link);
