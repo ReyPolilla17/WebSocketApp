@@ -12,8 +12,10 @@
 }
 
 .new-chat-wrapper > .options-wrapper {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8em;
+    padding: 0 6em;
 }
 
 .new-chat-wrapper > .options-wrapper > .option {
