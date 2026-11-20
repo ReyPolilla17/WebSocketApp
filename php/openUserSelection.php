@@ -43,6 +43,11 @@
             $i++;
         }
 
+        if($i) {
+            echo("A");
+            mysqli_free_result($result_users);
+        }
+
         $templates->show();
 
         @mysqli_close($link);
