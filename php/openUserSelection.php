@@ -37,11 +37,11 @@
         $i = 0;
 
         while($line_users = mysqli_fetch_assoc($result_users)) {
-            // $templates->setCurrentBlock($block_name);
+            $templates->setCurrentBlock($block_name);
 
-            // $templates->setVariable("USER_NAME", $line_users['user_name']);
+            $templates->setVariable("USER_NAME", $line_users['user_name']);
             
-            // $templates->parseCurrentBlock();
+            $templates->parseCurrentBlock();
 
             $i++;
         }
