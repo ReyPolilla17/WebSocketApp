@@ -35,7 +35,7 @@ function createChat(userId) {
         method: 'POST',
         async: true,
         data: `username=${userInfo.user}&password=${userInfo.password}&userId=${userId}`,
-        success: displayInChatWrapper,
+        success: successNewChat,
         error: eFnction
     });
 }
