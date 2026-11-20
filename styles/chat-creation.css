@@ -40,20 +40,47 @@
     margin-bottom: 0.5em;
 }
 
-.new-chat-wrapper > button {
+
+
+.new-chat-wrapper > .selection-wrapper {
+    padding: 1.5em;
+    text-align: start;
+}
+
+.new-chat-wrapper > .selection-wrapper > .user-listing-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.new-chat-wrapper > .selection-wrapper > .user-listing-wrapper > .user-listing {
+    width: 40%;
+    color: black;
+    border-radius: 1.2em;
+}
+
+.new-chat-wrapper > .selection-wrapper > .user-listing-wrapper > .user-listing > #user-list {
+    padding: 1em 0;
+}
+
+.new-chat-wrapper > .selection-wrapper h1 {
+    padding: 1.5em;
+    text-align: center;
+}
+
+.new-chat-wrapper > .selection-wrapper button {
     padding: 10px;
     border-radius: 2em;
     font-size: 1.1em;
     background-color: #FFE66D;
-    color: 2F3061;
+    color: #2F3061;
     border: none;
     transition: 0.3s;
 }
 
-.new-chat-wrapper > button:hover {
+.new-chat-wrapper > .selection-wrapper button:hover {
     background-color: #fff3b7;
 }
 
-.new-chat-wrapper > button:active {
+.new-chat-wrapper > .selection-wrapper button:active {
     background-color: #FFE66D;
 }
