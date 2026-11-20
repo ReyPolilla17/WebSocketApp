@@ -28,6 +28,7 @@
     <script>initUser('{USER}', '{PASS}')</script>
     
     <script src="./scripts/chat-openning.js" defer></script>
+    <script src="./scripts/chat-creation.js" defer></script>
     <script src="./scripts/chat-sending.js" defer></script>
     <script src="./scripts/chat-filtering.js" defer></script>
 </head>
@@ -37,7 +38,7 @@
             <div class="chat-topbar">
                 <div class="send-form">
                     <input type="text" name="chat-search" id="chat-search" placeholder="Buscar chat..." onkeyup="filterChats()">
-                    <button><i class="fa-solid fa-plus"></i></button>
+                    <button onclick="openChatCreation()"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
 

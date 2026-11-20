@@ -18,6 +18,7 @@
 
 .new-chat-wrapper > .options-wrapper > .option {
     background-color: #FFE66D;
+    color: #2F3061;
     padding: 2em;
     border-radius: 2em;
 }

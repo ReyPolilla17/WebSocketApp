@@ -12,11 +12,7 @@ function openChat(chatId) {
         type: 'POST',
         async: true,
         data: `username=${userInfo.user}&password=${userInfo.password}&chatId=${chatId}`,
-        success: displayChat,
+        success: displayInChatWrapper,
         error: eFnction
     });
-}
-
-function displayChat(result, status, xhr) {
-    $("#chat-wrapper").html(result); 
 }
