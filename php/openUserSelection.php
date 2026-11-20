@@ -30,7 +30,7 @@
             $templates->setCurrentBlock("GROUP");
         }
 
-        // $templates->addBlockFile("USERS_LIST", "USERS_COLLECTION", "./users-list.html");
+        $templates->addBlockFile("USERS_LIST", "USERS_COLLECTION", "./users-list.html");
 
         $result_users = mysqli_query($link, $query_users);
 
