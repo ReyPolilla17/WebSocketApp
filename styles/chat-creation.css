@@ -2,8 +2,13 @@
     height: 100%;
     width: 100%;
     background-color: #2F3061;
+    color: white;
     align-self: center;
     text-align: center;
+}
+
+.new-chat-wrapper h1 {
+    padding: 3em;
 }
 
 .new-chat-wrapper > .options-wrapper {
@@ -15,4 +20,9 @@
     background-color: #FFE66D;
     padding: 2em;
     border-radius: 2em;
+}
+
+.new-chat-wrapper > .options-wrapper > .option i {
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
