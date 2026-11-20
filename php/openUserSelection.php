@@ -21,7 +21,7 @@
         if($type == 1) {
             $templates->addBlockFile("SELECTION", "CHAT_SELECTION", "./user-selection-chat.html");
             
-            $query_users = "SELECT * FROM users WHERE user_id != $user_id HAVING user_id NOT IN (SELECT ucu.user_id FROM (SELECT c.conversation_id, uc.user_id FROM user_conversation uc LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE is_chat = 1 AND uc.user_id != $user_id HAVING c.conversation_id IN (SELECT c.conversation_id FROM user_conversation uc LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE is_chat = 1 AND uc.user_id = $user_id)) ucu)";
+            $query_users = "SELECT user_id, user_name, user_image, birth_date, creation_date FROM users WHERE user_id != $user_id HAVING user_id NOT IN (SELECT ucu.user_id FROM (SELECT c.conversation_id, uc.user_id FROM user_conversation uc LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE is_chat = 1 AND uc.user_id != $user_id HAVING c.conversation_id IN (SELECT c.conversation_id FROM user_conversation uc LEFT JOIN conversations c ON uc.conversation_id = c.conversation_id WHERE is_chat = 1 AND uc.user_id = $user_id)) ucu)";
             $block_name = "USERS_CHAT_LIST";
         } else {
             $templates->addBlockFile("SELECTION", "GROUP_SELECTION", "./user-selection-group.html");
