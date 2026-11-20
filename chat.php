@@ -17,7 +17,7 @@
         $templates->setVariable("USER", $user);
         $templates->setVariable("PASS", $pass);
         
-        $templates->addBlockFile("CHAT", "CHAT", "./placeholder.html");
+        $templates->addBlockFile("CHAT", "CHAT", "./create-chat.html");
         $templates->touchBlock("CHAT");
         
         $query_user_chats = "CALL getUserChats($user_id)";

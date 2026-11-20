@@ -4,7 +4,6 @@ function sendMessage(chatId) {
     const input = document.getElementById("send-message");
     const message = input.value.trim();
     
-    
     if(message.length > 0 && message.length < 2000) {
         $.ajax({
             url: './php/sendMessage.php',
