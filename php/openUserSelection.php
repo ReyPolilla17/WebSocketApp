@@ -50,7 +50,7 @@
             mysqli_free_result($result_users);
         }
 
-        $templates->show();
+        // $templates->show();
 
         @mysqli_close($link);
     }
