@@ -3,7 +3,6 @@
     width: 100%;
     background-color: #2F3061;
     color: white;
-    align-self: center;
     text-align: center;
 }
 
@@ -39,4 +38,22 @@
 .new-chat-wrapper > .options-wrapper > .option i {
     font-size: 2em;
     margin-bottom: 0.5em;
+}
+
+.new-char-wrapper > button {
+    padding: 10px;
+    border-radius: 2em;
+    font-size: 1.1em;
+    background-color: #FFE66D;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.new-char-wrapper > button:hover {
+    background-color: #fff3b7;
+}
+
+.new-char-wrapper > button:active {
+    background-color: #FFE66D;
 }
